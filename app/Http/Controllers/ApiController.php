@@ -113,14 +113,16 @@ class ApiController extends Controller
         return response()->json([]);
     }
 
-    public function refreshToken(Request $request){
+    public function refreshToken(Request $request)
+    {
         LOG::debug("refreshed called");
         return response()->json([
-            'access_token' => 'mock_access_token_123',
-            'token_type' => 'bearer',
-            'expires_in' => 21600,
-            'scope' => 'read write',
-            'user_id' => 123456789,
+            "access_token" => "APP_USR-12345657984-090515-b0ad156bce70050973466faa15-1234567",
+            "token_type" => "bearer",
+            "expires_in" => 10800,
+            "scope" => "offline_access read write",
+            "user_id" => 1234567,
+            "refresh_token" => "TG-5b9032b4e4b0714aed1f959f-1234567"
         ], Response::HTTP_OK);
     }
 }
